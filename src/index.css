@@ -6,37 +6,37 @@
 
 @layer base {
   :root {
-    /* Core palette - Green energy theme */
-    --background: 248 250 252;
+    /* Pastel palette - Green energy theme */
+    --background: 158 100% 97%; /* Very light mint */
     --foreground: 15 23 42;
     
-    --card: 255 255 255;
+    --card: 120 100% 98%; /* Pastel green card */
     --card-foreground: 15 23 42;
     
-    --popover: 255 255 255;
+    --popover: 120 100% 98%;
     --popover-foreground: 15 23 42;
     
-    /* Green hydrogen branding */
-    --primary: 142 69% 58%; /* #22c55e - Main green */
+    /* Pastel green hydrogen branding */
+    --primary: 142 35% 75%; /* Pastel green */
     --primary-foreground: 355 7% 97%;
-    --primary-dark: 142 76% 36%; /* Darker green */
-    --primary-light: 142 69% 85%; /* Light green */
+    --primary-dark: 142 45% 65%; /* Slightly darker pastel */
+    --primary-light: 142 25% 85%; /* Very light pastel */
     
-    --secondary: 200 95% 97%;
+    --secondary: 200 60% 95%; /* Pastel blue */
     --secondary-foreground: 15 23 42;
     
-    --muted: 248 250 252;
+    --muted: 180 50% 96%; /* Pastel mint */
     --muted-foreground: 100 7% 55%;
     
-    --accent: 204 94% 94%;
+    --accent: 300 50% 95%; /* Pastel lavender */
     --accent-foreground: 15 23 42;
     
-    /* Status colors */
-    --success: 142 69% 58%;
+    /* Pastel status colors */
+    --success: 142 40% 75%; /* Pastel green */
     --success-foreground: 355 7% 97%;
-    --warning: 38 92% 50%;
+    --warning: 38 60% 80%; /* Pastel orange */
     --warning-foreground: 355 7% 97%;
-    --destructive: 0 84% 60%;
+    --destructive: 0 50% 80%; /* Pastel red */
     --destructive-foreground: 355 7% 97%;
     
     --border: 214 32% 91%;
