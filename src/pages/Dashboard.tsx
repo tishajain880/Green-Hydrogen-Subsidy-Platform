@@ -41,10 +41,7 @@ export const Dashboard = () => {
           <h1 className="text-3xl font-bold">Government Dashboard</h1>
           <p className="text-muted-foreground">Manage subsidy schemes and monitor green hydrogen progress</p>
         </div>
-        <Button 
-          className="bg-gradient-primary text-primary-foreground hover:opacity-90"
-          onClick={() => navigate("/schemes/create")}
-        >
+        <Button className="bg-gradient-primary text-primary-foreground hover:opacity-90">
           <Plus className="w-4 h-4 mr-2" />
           Create New Scheme
         </Button>
@@ -121,35 +118,19 @@ export const Dashboard = () => {
             <CardTitle>Quick Actions</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <Button 
-              variant="outline" 
-              className="w-full justify-start"
-              onClick={() => navigate("/schemes/create")}
-            >
+            <Button variant="outline" className="w-full justify-start">
               <FileText className="w-4 h-4 mr-2" />
               Create Subsidy Scheme
             </Button>
-            <Button 
-              variant="outline" 
-              className="w-full justify-start"
-              onClick={() => navigate("/schemes")}
-            >
+            <Button variant="outline" className="w-full justify-start">
               <Users className="w-4 h-4 mr-2" />
               Review Producer Applications
             </Button>
-            <Button 
-              variant="outline" 
-              className="w-full justify-start"
-              onClick={() => navigate("/disbursements")}
-            >
+            <Button variant="outline" className="w-full justify-start">
               <CheckCircle className="w-4 h-4 mr-2" />
               Approve Disbursements
             </Button>
-            <Button 
-              variant="outline" 
-              className="w-full justify-start"
-              onClick={() => navigate("/audit")}
-            >
+            <Button variant="outline" className="w-full justify-start">
               <TrendingUp className="w-4 h-4 mr-2" />
               View Analytics
             </Button>
@@ -166,10 +147,7 @@ export const Dashboard = () => {
           <h1 className="text-3xl font-bold">Producer Dashboard</h1>
           <p className="text-muted-foreground">Track your hydrogen production and subsidy milestones</p>
         </div>
-        <Button 
-          className="bg-gradient-primary text-primary-foreground hover:opacity-90"
-          onClick={() => navigate("/milestones")}
-        >
+        <Button className="bg-gradient-primary text-primary-foreground hover:opacity-90">
           <Target className="w-4 h-4 mr-2" />
           Submit Milestone
         </Button>
