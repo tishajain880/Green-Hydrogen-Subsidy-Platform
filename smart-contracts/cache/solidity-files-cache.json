@@ -1,0 +1,76 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\My Projects\\Green-Hydrogen-Subsidy-Platform-main\\smart-contracts\\contracts\\SubsidyManager.sol": {
+      "lastModificationDate": 1764436974176,
+      "contentHash": "c01c2e17a8a8a64beb975e982494225f",
+      "sourceName": "contracts/SubsidyManager.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "IERC20",
+        "SubsidyManager"
+      ]
+    },
+    "C:\\My Projects\\Green-Hydrogen-Subsidy-Platform-main\\smart-contracts\\contracts\\TestToken.sol": {
+      "lastModificationDate": 1764436981468,
+      "contentHash": "2a5a2d9e6e722c7ea0d187f2cbccf2d2",
+      "sourceName": "contracts/TestToken.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "TestToken"
+      ]
+    }
+  }
+}
