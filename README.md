@@ -49,7 +49,7 @@ Ensure you have the following installed:
 
 🛠️ Installation & Setup
 1️⃣ Clone the Repository
-git clone 
+git clone https://github.com/tishajain880/Green-Hydrogen-Subsidy-Platform.git
 cd green-hydrogen-subsidy-system
 
 📌 Backend Setup
