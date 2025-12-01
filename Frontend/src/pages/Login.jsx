@@ -13,7 +13,6 @@ import {
 } from '../components/ui/card';
 import { useNavigate, Link } from 'react-router-dom';
 import { useToast } from '../hooks/use-toast';
-import { validateEmail, validatePassword } from '../lib/validators';
 import { Eye, EyeOff } from 'lucide-react';
 
 const Login = () => {
@@ -31,20 +30,7 @@ const Login = () => {
     setLoading(true);
     setError('');
 
-    // validations
-    const emailValid = validateEmail(email);
-    if (!emailValid.ok) {
-      setError(emailValid.message);
-      setLoading(false);
-      return;
-    }
-
-    const passValid = validatePassword(password);
-    if (!passValid.ok) {
-      setError(passValid.message);
-      setLoading(false);
-      return;
-    }
+    // No client-side validation: send credentials directly to backend
 
     try {
       const response = await apiClient.login({ email, password });
