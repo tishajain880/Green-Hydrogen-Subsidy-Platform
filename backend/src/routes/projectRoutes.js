@@ -335,11 +335,11 @@ router.get("/:id", protect, async (req, res, next) => {
     );
     if (!project) return res.status(404).json({ message: "Not found" });
 
-    // allow owner or admin
-    if (
-      req.user.role !== "admin" &&
-      project.owner._id.toString() !== req.user._id.toString()
-    ) {
+    // allow owner or admin; additionally allow PRODUCERs to view approved projects
+    const isOwner = project.owner && project.owner._id.toString() === req.user._id.toString();
+    const isAdmin = req.user.role === "admin";
+    const isProducerViewingApproved = req.user.role === "PRODUCER" && project.status === "approved";
+    if (!isOwner && !isAdmin && !isProducerViewingApproved) {
       return res.status(403).json({ message: "Forbidden" });
     }
     res.json(project);
@@ -549,8 +549,8 @@ router.post("/:id/onchain", protect, async (req, res, next) => {
     const project = await Project.findById(req.params.id).populate("owner");
     if (!project) return res.status(404).json({ message: "Not found" });
 
-    // only admin can register on-chain
-    if (req.user.role !== "admin") {
+    // allow GOV or admin to register on-chain (GOV often creates schemes)
+    if (!(req.user.role === "admin" || req.user.role === "GOV")) {
       return res.status(403).json({ message: "Forbidden" });
     }
 
@@ -564,15 +564,17 @@ router.post("/:id/onchain", protect, async (req, res, next) => {
     const deployments = loadDeployments();
     const tokenAddress = deployments.TestToken;
 
+    // pass totalSubsidy so the on-chain record reflects the intended amount
     const receipt = await createProjectOnChain(
       project._id.toString(),
       producerAddress,
-      tokenAddress
+      tokenAddress,
+      project.totalSubsidy || 0
     );
     project.chainProjectId = project._id.toString();
     project.tokenAddress = tokenAddress;
-    // mark as active on successful on-chain registration
-    project.status = "active";
+    // mark as approved on successful on-chain registration
+    project.status = "approved";
     await project.save();
 
     // notify owner

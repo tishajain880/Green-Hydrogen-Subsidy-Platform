@@ -86,6 +86,11 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
+// helpful message for accidental GET (e.g., user used GET in Postman)
+router.get("/login", (req, res) => {
+  res.status(405).json({ message: "Use POST /api/auth/login with JSON body { email, password }" });
+});
+
 const { protect } = require("../middleware/auth");
 const Notification = require("../models/Notification");
 const { ethers } = require("ethers");
