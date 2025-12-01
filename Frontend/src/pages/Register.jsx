@@ -19,6 +19,7 @@ import { Eye, EyeOff } from 'lucide-react';
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [role, setRole] = useState('PRODUCER');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -55,7 +56,7 @@ const Register = () => {
     }
 
     try {
-      const response = await apiClient.register({ name, email, password });
+      const response = await apiClient.register({ name, email, password, role });
 
       toast({
         title: 'Registration successful',
@@ -159,6 +160,22 @@ const Register = () => {
                     required
                     disabled={loading}
                   />
+                </div>
+
+                <div className="space-y-2">
+                  <Label>Role</Label>
+                  <select
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    disabled={loading}
+                    className="w-full px-3 py-2 border rounded-md"
+                  >
+                    <option value="PRODUCER">H₂ Producer</option>
+                    <option value="GOV">Government</option>
+                    <option value="AUDITOR">Auditor</option>
+                    <option value="BANK">Settlement Bank</option>
+                    <option value="MILESTONE_EDITOR">Milestone Editor</option>
+                  </select>
                 </div>
 
                 <div className="space-y-2">
